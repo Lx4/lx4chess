@@ -1,0 +1,1 @@
+- add an alert state (like for empty summoner's search to set an alert state (with a timeout to remove the specific alert))
