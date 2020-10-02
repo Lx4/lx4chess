@@ -13,7 +13,7 @@ const ProfileHeader = () => {
         <div className="relative flex-shrink-0 h-32 w-32 shadow-md">
           <img
             className="w-full"
-            src={`/img/profileicon/${meta.profileIconId}.png`}
+            src={`https://lx4chess-assets.s3.eu-west-3.amazonaws.com/img/profileicon/${meta.profileIconId}.png`}
             alt="Profile icon"
           />
           <div className="absolute right-0 bottom-0 bg-gray-100 flex justify-center content-center h-5 w-5">
