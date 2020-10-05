@@ -28,7 +28,7 @@ const ProfileDetails = () => {
         <div>
           <img
             className="h-24"
-            src={`https://lx4chess-assets.s3.eu-west-3.amazonaws.com/img/ranked-emblems/Emblem_${capitalize(tier)}.png`}
+            src={`${process.env.REACT_APP_URL_IMG}/img/ranked-emblems/Emblem_${capitalize(tier)}.png`}
             alt="summoner's rank"
           />
         </div>

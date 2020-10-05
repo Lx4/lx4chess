@@ -1,0 +1,28 @@
+/* .champion {
+  @apply border-solid border-4 border-gray-800;
+} */
+
+.rarity-0 {
+  border-color: grey;
+  color: grey;
+}
+
+.rarity-1 {
+  border-color: #11b288;
+  color: #11b288;
+}
+
+.rarity-2 {
+  border-color: #207ac7;
+  color: #207ac7;
+}
+
+.rarity-3 {
+  border-color: #c440da;
+  color: #c440da;
+}
+
+.rarity-4 {
+  border-color: #ffb93b;
+  color: #ffb93b;
+}

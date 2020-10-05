@@ -59,7 +59,7 @@ const Profile = ({ match }) => {
             <td className="border px-1 sm:px-2 py-2">85</td>
             <td className="border px-1 sm:px-2 py-2">100</td>
             <td className="border px-1 sm:px-2 py-2 flex items-center">
-              <img className="h-4 w-4" src="./img/karma.png" alt="" />
+              <img className="h-4 w-4" src="img/karma.png" alt="" />
               <div className="">Karma</div>
             </td>
             <td className="border px-1 sm:px-2 py-2">130</td>
