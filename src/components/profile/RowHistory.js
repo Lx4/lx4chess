@@ -6,8 +6,8 @@ import "./RowHistory.css";
 
 import { defineHistoryRowBG } from "../../utilities/profile";
 import ProfileContext from "../../context/profile/profileContext";
-import { getSummoner } from "../../selectors/match";
-import { getChampionCost } from "../../utilities/champions";
+import { getSummoner, cleanTraitName } from "../../selectors/match";
+import { getActiveTraits } from "../../selectors/summoner";
 
 import DetailedRowHistory from "./DetailedRowHistory";
 
@@ -46,7 +46,22 @@ const RowHistory = ({ match }) => {
         <div>{prettyMilliseconds(game_length * 1000, { compact: true })}n</div>
         <div>{moment(game_datetime).fromNow()}</div>
       </div>
-      {/* placement */}
+      {/* traits */}
+      <div className="flex flex-wrap mr-12">
+        {getActiveTraits(summoner.traits).map((trait) => (
+          <div
+            className={`hexagon h-6 w-6 mr-1 style-${trait.style} flex items-center justify-center text-gray-600`}
+          >
+            <img
+              className="h-4 w-4 fill-current"
+              src={`${
+                process.env.REACT_APP_URL_IMG
+              }/img/traits/${cleanTraitName(trait.name)}.svg`}
+            />
+          </div>
+        ))}
+      </div>
+      {/* units */}
       <div className="flex flex-wrap">
         {summoner.units.map((unit, index) => (
           <div className="flex flex-col items-center mr-1">
@@ -55,7 +70,6 @@ const RowHistory = ({ match }) => {
             </div>
             <div
               key={index}
-              // can be updated with rarity present in unit
               className={`rarity-${unit.rarity} border-solid border-4   rounded h-12 w-12 mb-1 sm:mb-0`}
             >
               <img
@@ -77,6 +91,7 @@ const RowHistory = ({ match }) => {
           </div>
         ))}
       </div>
+      {/* participants */}
       <div className="grid grid-cols-2 participants text-sm gap-2 text-gray-700 ml-16">
         {match.participants_details.map((participant) =>
           participant.name !== summonerName ? (
