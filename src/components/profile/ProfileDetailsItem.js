@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileDetailsHeader = ({ name, value, barValue }) => {
   return (
-    <div className="p-1 px-4">
+    <div className="p-1 px-6 lg:px-4">
       <div className="clearfix">
         <span className="block float-left text-xs">{name}</span>
         <span className="block float-right text-xs">{value}</span>
